@@ -21,7 +21,7 @@ require('./database');
 app.set('port', process.env.PORT || 3000);
 
 connectDB()
-app.use(cors({origin: 'https://www.parodipablo.site'}));
+app.use(cors({origin: 'https://parodipablo.site'}));
 //app.use(cors({origin: 'https://barberxy.netlify.app'}));
 //app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true })); // if req.body is undifined need to add this middleware!
