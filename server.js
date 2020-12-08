@@ -18,7 +18,7 @@ const cors = require('cors');
 const app = express();
 require('./database');
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 
 connectDB()
 //app.use(cors({origin: 'https://www.parodipablo.site'}));
