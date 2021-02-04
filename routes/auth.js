@@ -22,9 +22,9 @@ router.post('/register', async (req, res) =>{
 
     console.log('register data: ',req.body)
     const userExists = await NewUser.find({ email: req.body.email })
-    if (userExists[0]) return res.send({error:'The user already exists'})
+    if (userExists[0]) return res.send({error:'Este usuario ya existe'})
 
-    if( pass !== confirmPass) return res.send({error:'pass not match'})
+    if( pass !== confirmPass) return res.send({error:'Las contraseñas no coinciden'})
 
     // if i will put extra data it will not added to the DB because Sechma
     // only the correct keys will added to the DB!
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
     // const userExists2 = await NewUser.findOne({_id:"5f2040182747a520a4b7a8be"}) // work only with id and return one object
     if(!userExists[0]) return res.send({error:'Sorry user not found'})
     
-    if(pass !== userExists[0].password) return res.send({error:'Sorry wrong password'})
+    if(pass !== userExists[0].password) return res.send({error:'Contraseña equivocada'})
     
     let username = email.substring(0, email.indexOf('@'))
     let userPhone = 'phone...'

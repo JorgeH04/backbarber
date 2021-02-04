@@ -8,13 +8,13 @@ router.post('/appointment', async (req, res)=>{
     console.log('makeing appointment')
 
     const appointmentExists = await NewAppointment.find({userID:req.body.userID}) // return array of objects
-    if(appointmentExists[0]) return res.send({error:'You alreay have appointment'})
+    if(appointmentExists[0]) return res.send({error:'Usted ya programó un turno'})
 
     const timeExists = await NewAppointment.find({appointmentKey:req.body.key}) // return array of objects
-    if(timeExists[0]) return res.send({error:'Sorry try another time'})
+    if(timeExists[0]) return res.send({error:'Este turno ya está tomado, elija otro día u hora'})
 
     const user = await Users.findOne({_id:req.body.userID})
-    if(!user) return res.send({error:'user dosent exists'})
+    if(!user) return res.send({error:'Este usuario no existe'})
 
     let {userID, key, name, date, time, phone, day, timeInMS} = req.body
 
