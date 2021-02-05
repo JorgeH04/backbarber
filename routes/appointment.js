@@ -33,7 +33,7 @@ router.post('/appointment', async (req, res)=>{
       user.phone = phone
       user.save()
 
-    res.status(200).send('Appointment scheduled successfully!')
+    res.status(200).send('Turno programado exitosamente!')
 })
 
 router.post('/changeappointment', async (req, res)=>{

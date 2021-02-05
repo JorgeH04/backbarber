@@ -11,9 +11,15 @@ const newAppointment = new mongoose.Schema({
     appointmentKey:{
         type:String
     },
-    name:{
+     name:{
+         type:String
+     },
+
+     nombre:{
         type:String
     },
+ 
+  
     date:{
         type:String
     },
