@@ -9,6 +9,7 @@ const connectDB = require('./config/db')
 const authRoute = require('./routes/auth');
 const appointmentRoute = require('./routes/appointment');
 const profileRoute = require('./routes/profile');
+const mensaje = require('./routes/mailer');
 
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -31,6 +32,7 @@ const PORT = process.env.PORT
 app.use('/', authRoute);
 app.use('/', appointmentRoute);
 app.use('/', profileRoute);
+app.use('/', mensaje); 
 
 // app.listen( PORT || 5000, () =>
 //   console.log(`Server has started on port:${PORT}`)
