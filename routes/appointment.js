@@ -21,7 +21,7 @@ router.post('/appointment', async (req, res)=>{
     const newAppointment = new NewAppointment({   
         userID,
         appointmentKey:key,
-        name,
+        name:user.name,
         date,
         time,
         phone,

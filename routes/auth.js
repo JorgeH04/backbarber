@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 
 router.post('/register', async (req, res) =>{
-    let {email, pass, confirmPass} = req.body
+    let {nombre, email, pass, confirmPass} = req.body
 
     console.log('register data: ',req.body)
     const userExists = await NewUser.find({ email: req.body.email })
@@ -33,7 +33,7 @@ router.post('/register', async (req, res) =>{
     const newUser = new NewUser({   
       email:email,
       password:pass,
-      name:username
+      name:nombre
     })
 
     newUser.save()
