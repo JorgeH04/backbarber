@@ -74,7 +74,7 @@ router.get('/userappointment', async(req, res) =>{
 router.get('/getappointments', async(req, res) => {
 
   console.log('get appointments')
-  const appointmentExists = await NewAppointment.find() // return array of objects
+  const appointmentExists = await NewAppointment.find().sort({ _id: -1 }) // return array of objects
   if(!appointmentExists[0]) return res.send({error:'You have no appointments'})
 
   res.send(appointmentExists)
@@ -105,7 +105,7 @@ router.post('/cancelappointment', async(req, res) =>{
 
 router.get('/getusers', async(req, res) => {
   console.log('get users')
-  const usersExists = await Users.find()
+  const usersExists = await Users.find().sort({ _id: -1 })
   if(!usersExists[0]) return res.send({error:'No Users'})
 
   res.send(usersExists)
