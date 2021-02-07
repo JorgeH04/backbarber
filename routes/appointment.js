@@ -113,4 +113,10 @@ router.get('/getusers', async(req, res) => {
 })
 
 
+router.delete('/delete/:id', async (req, res, next) => {
+  const { id } = req.params;
+  await NewAppointment.deleteOne({_id: id});
+  //res.redirect('/');
+});
+
 module.exports = router;
