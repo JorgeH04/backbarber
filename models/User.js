@@ -4,12 +4,10 @@ const newUser = new mongoose.Schema({
 
    nombre:{
         type:String
-
     },
 
     email:{
         type:String
-
     },
     password:{
         type:String

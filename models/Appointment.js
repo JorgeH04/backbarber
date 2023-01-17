@@ -18,8 +18,7 @@ const newAppointment = new mongoose.Schema({
      nombre:{
         type:String
     },
- 
-  
+    
     date:{
         type:String
     },
