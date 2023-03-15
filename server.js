@@ -23,8 +23,8 @@ app.set('port', process.env.PORT || 4000);
 
 //connectDB()
 //app.use(cors({origin: 'https://www.parodipablo.site'}));
-//app.use(cors({origin: 'https://barbdos.netlify.app'}));
-app.use(cors());
+app.use(cors({origin: 'https://barbdos.netlify.app'}));
+//app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true })); // if req.body is undifined need to add this middleware!
 app.use(express.json());  // if req.body is empty need to add this middleware!
 const PORT = process.env.PORT
